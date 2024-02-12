@@ -1,4 +1,4 @@
-FROM arm64v8/debian:bookworm-slim
+FROM debian:bookworm-slim
 ARG VERSION
 RUN \
     apt-get update -y \
