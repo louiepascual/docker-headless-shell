@@ -50,9 +50,9 @@ fi
 
 # determine version
 if [ -z "$VERSION" ]; then
-  VERSION=$(
-    curl -s https://omahaproxy.appspot.com/all.json | \
-      jq -r '.[] | select(.os == "win64") | .versions[] | select(.channel == "stable") | .current_version'
+  SRC_URL="https://versionhistory.googleapis.com/v1/chrome/platforms/linux/channels/stable/versions/"
+  VERSION=$(curl -s "${SRC_URL}" | \
+    jq -r '.versions[0] | .version'
   )
 fi
 
@@ -64,8 +64,8 @@ echo "VERSION:  $VERSION"
 echo "ARCH:     $ARCH"
 
 mkdir -p $SRC/out
-TMPDIR=$(mktemp -d -p /tmp headless-shell-$VERSION.XXXXX)
-ARCHIVE=$SRC/out/headless-shell-$VERSION.tar.bz2
+TMPDIR=$(mktemp -d -p /tmp headless-shell-$VERSION-$ARCH.XXXXX)
+ARCHIVE=$SRC/out/headless-shell-$VERSION-$ARCH.tar.bz2
 echo "TMPDIR:   $TMPDIR"
 echo "ARCHIVE:  $ARCHIVE"
 
