@@ -93,7 +93,7 @@ Chromium source tree, you can simply run [`build-docker.sh`](build-docker.sh):
 $ ./build-headless-shell.sh /path/to/chromium/src 74.0.3717.1
 
 # build headless-shell for arm64
-$ ./build-headless-shell.sh -b /path/to/chromium/src -v 74.0.3717.1 -x arm64
+$ ./build-headless-shell.sh -b /path/to/chromium/src -v 74.0.3717.1 -p arm64
 
 # build docker image (uses $PWD/out/headless-shell-$VER.tar.bz2)
 $ ./build-docker.sh 74.0.3717.1

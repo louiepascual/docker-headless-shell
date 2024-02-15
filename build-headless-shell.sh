@@ -25,7 +25,7 @@ VERSION=
 ARCH='amd64'
 
 OPTIND=1
-while getopts "a:b:j:t:uv:x:" opt; do
+while getopts "a:b:j:t:uv:p:" opt; do
 case "$opt" in
   a) ATTEMPTS=$OPTARG ;;
   b) BASE=$OPTARG ;;
@@ -33,7 +33,7 @@ case "$opt" in
   t) TTL=$OPTARG ;;
   u) UPDATE=1 ;;
   v) VERSION=$OPTARG ;;
-  x) ARCH=$OPTARG ;;
+  p) ARCH=$OPTARG ;;
 esac
 done
 
