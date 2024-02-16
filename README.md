@@ -97,6 +97,10 @@ $ ./build-headless-shell.sh -b /path/to/chromium/src -v 74.0.3717.1 -p arm64
 
 # build docker image (uses $PWD/out/headless-shell-$VER.tar.bz2)
 $ ./build-docker.sh 74.0.3717.1
+
+# build docker image for arm64
+$ ./build-docker.sh 74.0.3717.1 -p arm64
+
 ```
 
 [headless-shell]: https://github.com/chromedp/docker-headless-shell

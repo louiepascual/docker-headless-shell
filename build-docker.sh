@@ -54,7 +54,7 @@ done
   rm -rf $SRC/out/$VERSION/$ARCH
   mkdir -p  $SRC/out/$VERSION/$ARCH
   tar -jxf $SRC/out/headless-shell-$VERSION-$ARCH.tar.bz2 -C $SRC/out/$VERSION/$ARCH
-  docker build --build-arg VERSION=$VERSION --build-arg ARCH=$ARCH ${PARAMS[@]} .
+  docker build --build-arg VERSION=$VERSION --build-arg TARGETARCH=$ARCH ${PARAMS[@]} .
 )
 
 popd &> /dev/null
